@@ -50,7 +50,6 @@ for i in range(1, 11):
 print('finish')
 ```
 
-Output: 
 > 1, 2, 3, 4, 5, 'finish'
 
 ### Comments
@@ -70,7 +69,6 @@ def double(num)
 print(double._doc_)
 ```
 
-Output: 
 >"Function to double the value"
 
 ### Variables
@@ -99,8 +97,6 @@ a = 1 + 2j
 print(a, "is complex number?", isinstance(1 + 2j, complex))
 ```
 
-Output:
-
 > 5 is of type <class 'int'>
 
 > 2.0 if of type <class 'float'>
@@ -124,8 +120,6 @@ print(b)
 c = 1 + 2j
 print(c)
 ```
-
-Output:
 
 > 1234567890123456789
 
@@ -152,8 +146,6 @@ print("a[0:3] = ". a[0:3])
 print("a[5:] = ", a[5:])
 ```
 
-Output:
-
 > a[2] = 15
 
 > a[0:3] = [5, 10, 15]
@@ -169,7 +161,6 @@ a[2] = 4
 print(a)
 ```
 
-Output: 
 > [1, 2, 4]
 
 ### Python Tuple - ```use ()```
@@ -214,8 +205,6 @@ print("s[6:11] = ", s[6:11])
 s[5] = 'd'
 ```
 
-Output:
-
 > s[4] = 0
 
 > s[6:11] = world
@@ -234,8 +223,6 @@ print("a = ", a)
 print(type(a))
 ```
 
-Output:
-
 > a = {1, 2, 3, 4, 5}
 
 > <class 'set'>
@@ -246,7 +233,6 @@ a = {1, 2, 3, 4, 5}
 print(a)
 ```
 
-Output:
 > {1, 2, 3}
 
 #### There is no indexing
@@ -255,8 +241,6 @@ Output:
 a = {1, 2, 3}
 print(a[1])
 ```
-
-Output:
 
 > Traceback(most recent call last)
 File "<stdin>", line 3, in <module>
@@ -274,8 +258,6 @@ print("d[1] = ", d[1])
 print("d['key'] = ", d['key'])
 print("d[2] = ", d[2])
 ```
-
-Output:
 
 > <class 'dict'>
 
@@ -297,7 +279,6 @@ print(int(10.6))
 print(int(-10.9))
 ```
 
-Output:
 > 10
 
 > -10
@@ -310,7 +291,6 @@ print(str(25))
 print(int('1p'))
 ```
 
-Output:
 > 2.5
 
 > 25
@@ -319,3 +299,249 @@ Output:
 File "<string>", line 3, in runcode
 File "<interactive input>", line 1, in <module>
 ValueError: invalid literal for int() with base 10: '1p'
+
+### ```Print()```
+
+Sintax:
+```python
+print(*objects, sep'', end='\n', file=sys.stdout, flush=false)
+```
+
+* objects - value(s) to be printed
+* sep - separator between the values
+* end - it printed after all values are printed
+* file - where the values are printed
+* sys.stdout - screen
+
+```python
+print(1,2,3,4)
+print(1,2,3,4,sep='*')
+print(1,2,3,4,sep='#', end='&')
+```
+
+> 1 2 3 4
+
+> 1*2*3*4
+
+> 1#2#3#4&
+
+#### Formatting - ```stg.format()```
+
+```python
+print('I love {0} and {1}'.format('bread', 'butter'))
+print('I love {1} and {0}'.format('bread', 'butter'))
+```
+
+> I love bread and butter
+
+> I love butter and bread
+
+```python
+print('Hello {name}, {greeting}'.format(gretting='good morning', name = 'John'))
+```
+
+> Hello John, Good morning
+
+```python
+x = 12.3456789
+print('The value of x is %3.2f' %x)
+print('The value of x is %3.4f' %x)
+```
+
+> The value of x is 12.35
+
+> The value of x is 12.3457
+
+### Input 
+
+Sintax: `input([prompt])`, where prompt is the string we wish to display at the screen
+
+```python
+num = input('Enter a number.')
+print(num)
+```
+
+> Enter a number: 10
+
+> '10'
+
+#### `Eval()`
+It evaluate and executes expressions even if the provided input is a string
+
+`int('2+3')`
+> error
+
+`eval('2+3')`
+> 5
+
+### Import
+
+This basically works similar to other languages.
+
+```python
+import math
+print(math.p)
+```
+
+> 3.141592653589793
+
+We can also import only some attributes and functions
+
+### Operators
+
+* arithmetic operators
+* logical operators
+    * `and`, `or` and `not`
+* assignment operators
+
+### Bitwise operators
+
+Act on operands as if they were string or binary digits. It operates bit by bit, hence the name.
+
+* `&` AND
+* `|` OR
+* `~` NOT
+* `^` XOR
+* `>>` right shift
+* `<<` left shift
+
+```python
+x = 10 (0000 1010)
+y = 4 (0000 0100)
+
+x & y = 0 (0000 0000)
+x | y = 14 (0000 1110)
+~ x = -11 (1111 0101)
+x ^ y = 14 (0000 1110)
+x >> 2 = 2 (0000 0010)
+x << 2 = 40 (0010 1000)
+```
+
+### Special operators
+
+#### Identity operators
+
+* `is` and `is not`
+
+Used to check if two values (or variables are located on the same part of the memory).
+True if the operands are identical (refer to the same object)
+
+```python
+x1 = 5
+y1 = 5
+x2 = 'Hello'
+y2 = 'Hello'
+x3 = [1,2,3]
+y3 = [1,2,3]
+print(x1 is not y1)
+print(x2 is y2)
+print(x3 is y3)
+```
+
+> false
+
+> true
+
+> false
+
+The interpreter locates the values.
+
+#### Membership operators
+
+Used to test wether a value or variable is found in a sequence (string, list, tuple, set and dictionry)
+
+:warning: In a dictionry we can only test for presence of key, not the value
+
+* `in` True if value/variable is found in the sequence
+* `not in` True if value/variable is not found in the sequence
+
+```python
+x = 'Hello World'
+y = {1 : 'a', 2 : 'b'}
+print('H' in x)
+print('hello' not in x)
+print(1 in y)
+print('a' in y)
+```
+
+> true
+
+> true
+Remember, python is case sensitive
+
+> true
+
+> false
+
+### `if`, `else` and `elif` statement
+The body of if statement is indicated by identation.
+Python interprets non-zero values as true. None and 0 are interpreted as false.
+
+```python
+num = 3
+if num > 0:
+    print(num, "is a positive number.")
+print("pineaple")
+if num < 0:
+    print("don't print this")
+print("second pineaple")
+```
+
+> 3 is a positive number
+
+> pineaple
+
+> second pineaple
+
+`elif` if a shortcut for `else if`
+
+We can use nested statements, this follows the same rule of identation.
+
+### `for` loop
+
+```python
+numbers = [6,5,3,8,4,2,5,4,11]
+sum = 0
+for val in numbers:
+    sum = sum + val
+print(sum)
+```
+
+### Range function
+Generate a sequence of numbers
+
+`range(10)` will generate numbers from 0 to 9 (10 numbers)
+
+`range(start, stop, stepsize)` defining the start, stop and step size
+
+This function does not store all the values in memory, it would be inefficient. So it remembers the start, stop and stepsize and generates the next number to go. To force this function to output all the items, wen can use the function list().
+
+```python
+print(range(10))
+print(list(range(10)))
+print(list(range(2, 8)))
+print(list(range(2, 20, 3)))
+```
+
+> range(0, 10)
+
+> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+> [2, 3, 4, 5, 6, 7]
+
+> [2, 5, 8, 11, 14, 17]
+
+We can use range function in for loops to iterate through a sequence of numbers. It can be combined with `len()` function to iterate through a sequence using indexing.
+
+```python
+genre = ['pop', 'rock', 'jazz']
+for i in range(len(genre)):
+    print (genre[i])
+```
+
+> pop
+
+> rock
+
+> jazz
+
