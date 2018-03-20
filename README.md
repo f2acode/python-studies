@@ -545,3 +545,143 @@ for i in range(len(genre)):
 
 > jazz
 
+### For loop with else | While loop with else
+The else part is executed if the items in the sequence used in for loop exhasuts.
+Break statement can be used to stop a for loop. In such case, the else part is ignored.
+
+While works the same way.
+
+```python
+digits[1,2,5]
+for i in digits:
+    print(i)
+else:
+    print("No items left")
+```
+
+> 0
+
+> 1
+
+> 5
+
+> No items left
+
+#### Break statement 
+Terminates the loop containing it.
+Control the program flows to the statement immediately after the body of the loop.
+
+```python
+for val in "string":
+    if val == "i":
+        break
+    print(val)
+print("The end")
+```
+
+> s
+
+> t
+
+> r
+
+> The end
+
+#### Continue statement
+Is used to skip the rest of the code inside a loop for the current iteration only.
+Loop does not terminate but continues on with the next iteration
+
+```python
+for val in "string":
+    if val == "i":
+        continue
+    print(val)
+print("The end")
+```
+
+> s
+
+> t
+
+> r
+
+> n
+
+> g
+
+> The end
+
+#### Pass statement
+Pass is a null statement. The difference between a comment and pass statement in Python is that, while the interpreter ignores a comment entirely, pass is not ignored.
+However, nothing happens when pass is executed. It results into no operation (NOP).
+We generally use it as a placeholder.
+Suppose we have a loop or a function that is not implemented yet, but we want to implement it in the future. They cannot have an empty body. The interpreter would complain. So, we use the pass statement to construct a body that does nothing.
+
+```python
+sequence = {'p','a','s','s'}
+for val in sequence
+    pass
+```
+
+```python
+def function(args):
+    pass
+```
+
+### Function
+Is a group of related statements that perform a specific task.
+
+Sintax:
+```python
+def function_name(parameters):
+    """docstring"""
+    statements(s)
+```
+
+Function definition:
+
+1. keyword `def` marks the start of function header
+2. a function name to uniquely identify it.
+3. parameters (arguments) through which we pass values to a function
+4. a colon (:) mark the end of function header
+5. optional documentation (docstring) to describe what the functio does
+6. one or more valid python statements that make up the function body. Statements must have the same identation level.
+7. an optional return statement to return a value from the function
+
+Example:
+```python
+def greet(name):
+    """This function greets to the person passed in a parameter"""
+    print("Hello, " + name + "Good morning!")
+```
+
+:warning: we need to take care about scopes (inside/outside functions)
+We can declare global variable using the keyword `global`
+
+#### Default arguments 
+we can use use default values on a function, with the keyword `=`, But remember, all the arguments on the right of the first default argument should have a default value.
+
+#### Artbitrary arguments
+When we don't know in advance the number of arguments that will be passed into a function, we use arbitrary arguments
+
+```python
+def greet(*names):
+    for name in names:
+        print(name)
+
+greet("A", "B", "C", "D")
+```
+
+Output:
+> A
+
+> B
+
+> C
+
+> D
+
+### Built-in functions
+
+There are 68 built-in functions in Python 3.5.2
+
